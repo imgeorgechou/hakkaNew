@@ -92,7 +92,7 @@ const ShareImage: React.FC<ShareImageProps> = ({ collectedItems, onClose }) => {
 
           <div className="text-center mt-8">
             <p className="text-sm text-gray-500">
-              #客語學習 #數位學習 #教室主題
+              #客(蛤) 仰般講？ #客語學習 #教室主題
             </p>
           </div>
         </div>

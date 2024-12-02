@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import { Camera, Play } from "lucide-react";
+import ShareImage from "../components/ShareImage";
 
 interface Item {
   name: string;
@@ -94,7 +95,6 @@ const classroomItems: Item[] = [
 const audioMap: { [key: string]: string } = {
   人: "/audios/ngin.m4a",
   凳仔: "/audios/den-e.m4a",
-  粉牌: "/audios/fun.m4a",
   書: "/audios/su.m4a",
   包袱: "/audios/bau-fug.m4a",
   遮仔: "/audios/za-e.m4a",
@@ -106,8 +106,8 @@ const HomeScreen: React.FC = () => {
   const [collectedItems, setCollectedItems] = useState<Item[]>([]);
   const [isLoading, setIsLoading] = useState(false);
   const [isAllCollected, setIsAllCollected] = useState(false);
-
   const [showCompletionModal, setShowCompletionModal] = useState(false);
+  const [showShareModal, setShowShareModal] = useState(false);
   useEffect(() => {
     // 檢查是否所有物品都被收集
     const allCollected = classroomItems.every((item) =>
@@ -236,13 +236,39 @@ const HomeScreen: React.FC = () => {
             目前主題：教室
           </span>
         </div>
+
         {/* 進度顯示 */}
         <div className="mb-4 bg-white rounded-lg p-4 shadow-md">
           <div className="flex justify-between items-center mb-2">
             <span className="text-gray-700">收集進度</span>
-            <span className="text-green-600 font-medium">
-              {collectedItems.length}/{classroomItems.length}
-            </span>
+            <div className="flex items-center gap-4">
+              <span className="text-green-600 font-medium">
+                {collectedItems.length}/{classroomItems.length}
+              </span>
+              {collectedItems.length > 0 && (
+                <button
+                  onClick={() => setShowShareModal(true)}
+                  className="bg-purple-500 hover:bg-purple-600 text-white px-4 py-1.5 rounded-full text-sm flex items-center gap-2 transition-colors"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  >
+                    <path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8" />
+                    <polyline points="16 6 12 2 8 6" />
+                    <line x1="12" y1="2" x2="12" y2="15" />
+                  </svg>
+                  分享收集成果
+                </button>
+              )}
+            </div>
           </div>
           <div className="w-full bg-gray-200 rounded-full h-2.5">
             <div
@@ -255,6 +281,7 @@ const HomeScreen: React.FC = () => {
             />
           </div>
         </div>
+
         {/* 搜尋列 */}
         <div className="bg-white rounded-lg shadow-md p-4 mb-6">
           <div className="flex justify-between items-center">
@@ -273,7 +300,6 @@ const HomeScreen: React.FC = () => {
             </label>
           </div>
         </div>
-
         {/* 待蒐集字卡 */}
         <div className="mb-6">
           <h2 className="text-xl font-semibold text-gray-700 mb-4">
@@ -298,7 +324,6 @@ const HomeScreen: React.FC = () => {
             ))}
           </div>
         </div>
-
         {/* 已蒐集字卡 */}
         <div className="mb-6">
           <h2 className="text-xl font-semibold text-gray-700 mb-4">
@@ -383,7 +408,6 @@ const HomeScreen: React.FC = () => {
             </div>
           </div>
         )}
-
         {/* 載入中提示 */}
         {isLoading && (
           <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
@@ -391,6 +415,12 @@ const HomeScreen: React.FC = () => {
               <p>正在努力辨識OuO..</p>
             </div>
           </div>
+        )}
+        {showShareModal && (
+          <ShareImage
+            collectedItems={collectedItems}
+            onClose={() => setShowShareModal(false)}
+          />
         )}
       </div>
     </div>

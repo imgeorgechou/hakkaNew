@@ -1,41 +1,37 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/pages/api-reference/create-next-app).
+# 客（蛤）仰般講？
 
-## Getting Started
+AI 影像辨識客語學習 WEB APP
 
-First, run the development server:
+## 📌 專案簡介
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+本計畫旨在開發一款結合 AI 影像辨識、語音合成與遊戲化學習的客語學習系統，透過行動裝置即時辨識日常物品，提供客語文字與語音翻譯，並設計單字卡蒐集功能，增添互動樂趣。系統利用 YOLO 模型進行處理，將語言學習融入生活場景，降低學習門檻，同時推動客語數位化與文化傳承。基於高擴展性架構，該系統可廣泛應用於語言教育與文化保存，為提升語言多樣性與社會文化認同提供創新解決方案。
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## ✨ 主要功能
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+- 🎮 **遊戲化學習**：關卡式搜集單字，影像辨識新體驗。
+- 🎓 **語言學習**：客語發音提供，包含詞彙與發音練習。
+- 🌐 **多平台支援**：響應式設計，適用於桌面與行動裝置。
 
-[API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+## 🛠️ 使用技術
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) instead of React pages.
+### 前端技術
 
-This project uses [`next/font`](https://nextjs.org/docs/pages/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- React.js - 前端框架，提供流暢的使用者體驗。
 
-## Learn More
+### 後端技術
 
-To learn more about Next.js, take a look at the following resources:
+- Python - 架設後端伺服器，提供 API 服務。
+- RESTful API - 提供前後端溝通的 API 介面。
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn-pages-router) - an interactive Next.js tutorial.
+### 部署與其他工具
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- GitHub - 版本控制與專案管理。
+- Vercel - 部署前端應用。
 
-## Deploy on Vercel
+## 📌 專案狀態
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+桃園市有 AI 哈客松創點子大賽 技術實作組 優選（前八名）
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/pages/building-your-application/deploying) for more details.
-# hakka
+## 📩 聯絡方式
+
+如果對專案有任何問題或建議，請透過 [GitHub Issues](https://github.com/imgeorgechou/hakkaNew/issues) 聯繫。
